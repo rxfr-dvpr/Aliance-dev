@@ -1,0 +1,351 @@
+@import url(../css/fonts.css);
+
+:root {
+    --primary-font: 'Noto Sans';
+    --main-blue-color: #5C8EE6;
+    --text-color: #828A99;
+    --primary-color: #292d33;
+    --main-white-color: #fff;
+    --title-font: 'Bebas Neue';
+    --link-hover-color: #3A71D1;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--primary-font);
+}
+
+p, a {
+    color: var(--primary-color);
+    font-size: calc(14px + 2 * (100vw / 1920));
+}
+
+.txt-color {
+    color: var(--text-color);
+}
+
+h1, h2, 
+h3, h4,
+h5, h6 {
+    font-family: var(--title-font);
+    font-weight: 400;
+    color: var(--primary-color);
+    text-transform: uppercase;
+}
+
+h1, 
+h2 {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    row-gap: 30px;
+
+    &::before {
+        content: '';
+        width: 150px;
+        height: 2px;
+        background: var(--main-blue-color);
+    }
+}
+
+h1 {
+    font-size: calc(48px + 32 * (100vw / 1920));
+}
+
+h2 {
+    font-size: calc(35px + 25 * (100vw / 1920)) !important;
+}
+
+@media (max-width: 320px) {
+    h1 {
+        font-size: calc(48px + (32 + 32 * 0.7) * ((100vw - 320px)/ 1920)) !important;
+    }
+
+    h2 {
+        font-size: calc(35px + (25 + 25 * 0.7) * ((100vw - 320px)/ 1920)) !important;
+    }
+
+    p, a {
+        font-size: calc(14px + (2 + 2 * 0.7) * ((100vw - 320px)/ 1920));
+    }
+}
+
+
+ul {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+.container {
+    max-width: 1470px;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 15px;
+    height: 100%;
+}
+
+.row {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    height: 100%;
+}
+
+.container-fluid {
+    max-width: 1920px;
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.blue-link {
+    padding: 20px 50px;
+    font-size: 15px;
+    color: var(--main-white-color);
+    background: var(--main-blue-color);
+    transition: .3s;
+
+    &::first-letter {
+        text-transform: uppercase;
+    }
+    
+    &:hover {
+        background: var(--link-hover-color);
+    }
+}
+
+::-webkit-scrollbar {
+    width: 0;
+}
+
+.center-slider {
+
+    .swiper-button-prev,
+    .swiper-button-next {
+        max-width: 80px;
+        min-width: 80px;
+        width: 100%;
+        min-height: 60px;
+        max-height: 60px;
+        height: 100%;
+        color: var(--main-white-color) !important;
+        background: var(--main-blue-color);
+        transition: .4s;
+        margin-top: 0;
+        top: unset;
+        bottom: 0;
+    
+        &::after {
+            font-size: calc(17px + 5 * (100vw / 1920));
+        }
+    
+        &:hover {
+            background: var(--link-hover-color);
+        }
+    }
+    
+    .swiper-button-prev {
+        left: 8%;
+    }
+    
+    .swiper-button-next {
+        left: unset;
+        right: 8%;
+    }
+}
+
+.list-icon {
+    color: var(--main-blue-color);
+    font-size: 22px;
+}
+
+.blog__cards {
+
+    .swiper-button-prev,
+    .swiper-button-next {
+        max-width: 80px;
+        min-width: 80px;
+        width: 100%;
+        min-height: 60px;
+        max-height: 60px;
+        height: 100%;
+        color: var(--main-white-color) !important;
+        background: var(--main-blue-color);
+        transition: .4s;
+        margin-top: 0;
+        top: unset;
+        bottom: 0;
+    
+        &::after {
+            font-size: calc(17px + 5 * (100vw / 1920));
+        }
+    
+        &:hover {
+            background: var(--link-hover-color);
+        }
+    }
+    
+    .swiper-button-prev {
+        left: unset;
+        right: 80px;
+    }
+    
+    .swiper-button-next {
+        left: unset;
+        right: 0;
+    }
+}
+
+.about__cards-slider {
+
+    .swiper-button-prev,
+    .swiper-button-next {
+        max-width: 50%;
+        min-width: 50%;
+        width: 100%;
+        min-height: 50px;
+        max-height: 50px;
+        height: 100%;
+        color: var(--main-white-color) !important;
+        background: transparent;
+        transition: .4s;
+        margin-top: 0;
+        top: unset;
+        bottom: 0;
+
+        &::after {
+            font-size: calc(17px + 5 * (100vw / 1920));
+        }
+    }
+
+    .swiper-button-prev {
+        left: 0;
+        border-right: solid 1px rgba(235, 235, 240, 0.3);
+    }
+
+    .swiper-button-next {
+        right: 0;
+    }
+
+    &.dark-theme {
+
+        .swiper-button-prev,
+        .swiper-button-next {
+            border-color: #EBEBF0;
+            border-bottom: 1px solid #EBEBF0;
+
+            &::after {
+                color: var(--primary-color);
+            }
+        }
+    }
+}
+
+.work__steps-slider {
+
+    .swiper-button-prev,
+    .swiper-button-next {
+        max-width: 60px;
+        min-width: 60px;
+        width: 100%;
+        min-height: 40px;
+        max-height: 40px;
+        height: 100%;
+        color: var(--main-white-color) !important;
+        background: var(--main-blue-color);
+        transition: .4s;
+        margin-top: 0;
+        top: unset;
+        bottom: 0;
+    
+        &::after {
+            font-size: calc(17px + 5 * (100vw / 1920));
+        }
+    
+        &:hover {
+            background: var(--link-hover-color);
+        }
+    }
+    
+    .swiper-button-prev {
+        left: unset;
+        right: 60px;
+    }
+    
+    .swiper-button-next {
+        left: unset;
+        right: 0;
+    }
+
+}
+
+.modal-title {
+    font-size: calc(40px + 8 * (100vw / 1920));
+}
+
+@media (min-width: 1920px) {
+    h1 {
+        font-size: 80px !important;
+    }
+
+    h2 {
+        font-size: 60px !important;
+    }
+
+    p, a {
+        font-size: 16px;
+    }
+
+    .modal-title {
+        font-size: 48px;
+        text-transform: uppercase;
+    }
+}
+
+@media (max-width: 684px){
+    .blog__cards,
+    .center-slider {
+
+        .swiper-button-prev,
+        .swiper-button-next {
+            max-width: 60px;
+            min-width: 60px;
+            max-height: 40px;
+            min-height: 40px;
+        }
+
+        .swiper-button-prev {
+            right: 60px;
+        }
+    }
+}
+
+@media (max-width: 320px){
+    .center-slider,
+    .blog__cards,
+    .about__cards-slider,
+    .work__steps-slider {
+
+        .swiper-button-prev,
+        .swiper-button-next {
+            &::after {
+                font-size: calc(17px + (5 + 5 * 0.7) * ((100vw - 320px)/ 1920));
+            }
+        }
+    }
+
+    .modal-title {
+        font-size: calc(40px + (8 + 8 * 0.7) * ((100vw - 320px)/ 1920));
+    }
+}
